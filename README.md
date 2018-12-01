@@ -1,7 +1,8 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ##For running this
-I have used yarn instead of npm. So kindly follow yarn role for this projects
+I have used yarn instead of npm. So kindly follow yarn role for this projects.
+----------
 First you need install node modules then you can run by the following command
 
 ### `yarn start`
