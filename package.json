@@ -3,9 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "bootstrap": "3",
+    "lodash": "^4.17.11",
+    "prop-types": "^15.6.2",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
-    "react-scripts": "2.1.1"
+    "react-piano": "^3.1.2",
+    "react-scripts": "2.1.1",
+    "soundfont-player": "^0.11.0"
   },
   "scripts": {
     "start": "react-scripts start",
