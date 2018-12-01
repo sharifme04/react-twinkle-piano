@@ -19,7 +19,6 @@ class PianoWithRecording extends React.Component {
    this.onStopNoteInput = this.onStopNoteInput.bind(this);
   }
 
-
   onPlayNoteInput = midiNumber => {
     this.setState({
       notesRecorded: false,
