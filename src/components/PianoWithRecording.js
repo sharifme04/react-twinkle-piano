@@ -14,7 +14,7 @@ class PianoWithRecording extends React.Component {
       keysDown: {},
       noteDuration: DEFAULT_NOTE_DURATION,
     };
-   this.newUpdateArray=[]
+   this.newUpdateArray=[];
    this.onPlayNoteInput = this.onPlayNoteInput.bind(this);
    this.onStopNoteInput = this.onStopNoteInput.bind(this);
   }
