@@ -30,13 +30,21 @@ class App extends React.Component {
         currentTime: 0,
         currentEvents: [],
       },
+      startRecord:false
     };
     this.scheduledEvents = [];
 
     this.onClickReplay = this.onClickReplay.bind(this);
     this.onClickStop   = this.onClickStop.bind(this);
     this.onClickDelete = this.onClickDelete.bind(this);
+    this.startRecordHandle = this.startRecordHandle.bind(this);
   }
+
+  startRecordHandle = value => {
+    this.setState(prevState => ({
+      startRecord: !prevState.startRecord
+      }));
+    };
 
   getRecordingEndTime = () => {
     if (this.state.recording.events.length === 0) {
@@ -122,6 +130,7 @@ class App extends React.Component {
                 playNote={playNote}
                 stopNote={stopNote}
                 disabled={isLoading}
+                startRecord={this.state.startRecord}
                 keyboardShortcuts={keyboardShortcuts}
               />
             )}
@@ -129,8 +138,9 @@ class App extends React.Component {
         </div>
         <hr/>
         <div>
-          <button onClick={this.onClickReplay} className="btn btn-success">Replay</button>
-          <button onClick={this.onClickStop} className="btn btn-basic">Stop</button>
+          <button onClick={this.startRecordHandle} className={this.state.startRecord? "btn btn-primary": "btn btn-success"}>{this.state.startRecord? "Stop Recording": "Start Recording"}</button>
+          <button onClick={this.onClickReplay} className="btn btn-info">Replay</button>
+          <button onClick={this.onClickStop} className="btn btn-basic">Stop Replay</button>
           <button onClick={this.onClickDelete} className="btn btn-danger">Delete Records</button>
         </div>
         <div>
