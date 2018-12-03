@@ -14,7 +14,7 @@ class PianoWithRecording extends React.Component {
       keysDown: {},
       noteDuration: DEFAULT_NOTE_DURATION,
     };
-      this.newsharifarray=[]
+   this.newUpdateArray=[]
    this.onPlayNoteInput = this.onPlayNoteInput.bind(this);
    this.onStopNoteInput = this.onStopNoteInput.bind(this);
   }
@@ -25,7 +25,6 @@ class PianoWithRecording extends React.Component {
       notesRecorded: false,
     });
    }
-       //console.log(prevActiveNotes);
   };
 
 
@@ -37,7 +36,6 @@ class PianoWithRecording extends React.Component {
         noteDuration: DEFAULT_NOTE_DURATION,
       });
     }
-
   };
 
   recordNotes = (midiNumbers, duration) => {
@@ -53,8 +51,8 @@ class PianoWithRecording extends React.Component {
       };
     });
 
-    this.newsharifarray.push(newEvents[0].midiNumber);
-      if (this.newsharifarray[this.newsharifarray.length-2] !== newEvents[0].midiNumber) {
+    this.newUpdateArray.push(newEvents[0].midiNumber);
+      if (this.newUpdateArray[this.newUpdateArray.length-2] !== newEvents[0].midiNumber) {
         this.props.setRecording({
           events: this.props.recording.events.concat(newEvents),
           currentTime: this.props.recording.currentTime + duration,
